@@ -1,0 +1,39 @@
+{
+	"name": "nestjs-rollbar",
+	"version": "1.0.0",
+	"description": "Rollbar Module for nestjs",
+	"main": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"scripts": {
+		"prepublish": "tsc -p tsconfig.json",
+		"test": "mocha --require ts-node/register tests/**/*.ts"
+	},
+	"author": "Anton Larichev <antonlarichev@gmail.com>",
+	"keywords": [
+		"rollbar",
+		"typescript",
+		"nodejs",
+		"nestjs"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/AlariCode/rabbitmq-rpc"
+	},
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/AlariCode/rabbitmq-rpc/issues"
+	},
+	"homepage": "https://github.com/AlariCode/rabbitmq-rpc",
+	"dependencies": {
+		"rollbar": "^2.9.0"
+	},
+	"devDependencies": {
+		"ts-node": "^7.0.1",
+		"tslint": "^5.8.0",
+		"typescript": "^3.2.2",
+		"@nestjs/common": "^6.0.5"
+	},
+	"peerDependencies": {
+		"@nestjs/common": "^6.5.3"
+	}
+}

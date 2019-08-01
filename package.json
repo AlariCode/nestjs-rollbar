@@ -17,13 +17,13 @@
 	],
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/AlariCode/rabbitmq-rpc"
+		"url": "https://github.com/AlariCode/nestjs-rollbar"
 	},
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/AlariCode/rabbitmq-rpc/issues"
+		"url": "https://github.com/AlariCode/nestjs-rollbar/issues"
 	},
-	"homepage": "https://github.com/AlariCode/rabbitmq-rpc",
+	"homepage": "https://github.com/AlariCode/nestjs-rollbar",
 	"dependencies": {
 		"rollbar": "^2.9.0"
 	},

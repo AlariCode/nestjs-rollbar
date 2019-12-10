@@ -1,5 +1,14 @@
 # Rollbar Module for NestJS
 
+![alt cover](https://github.com/AlariCode/nestjs-rollbar/raw/master/img/logo.jpg)
+
+**More NestJS libs on [alariblog.ru](https://alariblog.ru)**
+
+[![npm version](https://badgen.net/npm/v/nestjs-rollbar)](https://www.npmjs.com/package/nestjs-rollbar)
+[![npm version](https://badgen.net/npm/license/nestjs-rollbar)](https://www.npmjs.com/package/nestjs-rollbar)
+[![npm version](https://badgen.net/github/open-issues/AlariCode/nestjs-rollbar)](https://github.com/AlariCode/nestjs-rollbar/issues)
+[![npm version](https://badgen.net/github/prs/AlariCode/nestjs-rollbar)](https://github.com/AlariCode/nestjs-rollbar/pulls)
+
 NestJS Rollbar package allows you to extend standard Logger to send errors directly to Rollbar. Usage if quite simple. Get Rollbar Token from your project page and install nestjs-rollbar package:
 
 ```bash

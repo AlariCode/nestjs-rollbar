@@ -35,13 +35,13 @@ export class AppModule {}
 -   accessToken - your project token
 -   environment - an environment that will be logged in Rollbar.
 
-To use RollbarLogger in any service or controller just inject it with `@RollbarInjection` decorator in constructor:
+To use RollbarLogger in any service or controller just inject it in constructor:
 
 ```javascript
-import { RollbarLogger, RollbarInjection } from 'nestjs-rollbar';
+import { RollbarLogger } from 'nestjs-rollbar';
 
 constructor(
-		@RollbarInjection() private readonly rollbarLogger: RollbarLogger
+		private readonly rollbarLogger: RollbarLogger
 	) {}
 ```
 

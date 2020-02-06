@@ -56,3 +56,23 @@ try {
 ```
 
 First parameter is an error object and the second - name of your method to show in logs.
+
+## Rollbar decorator
+If you want to automatically log error in controller or services method you can use RollbarHandler decorator.
+
+```javascript
+@Injectable()
+export class AppService {
+
+  @RollbarHandler()
+  getHello() {
+    throw new Error('asda');
+  }
+}
+```
+
+It will catch all errors in method and send them directly to Rollbar and print them in console. If you want to customize error name, pass it to decorator:
+
+```javascript
+@RollbarHandler('My error name')
+```

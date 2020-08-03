@@ -1,14 +1,14 @@
 import { Module, DynamicModule, Provider, Global } from '@nestjs/common';
 import { RollbarLogger } from './rollbar.logger';
-import { IRollbarConfig } from './config.interface';
+import { Configuration as RollbarOptions } from 'rollbar';
 
 export let logger: RollbarLogger;
 
 @Global()
 @Module({})
 export class LoggerModule {
-	static forRoot(config: IRollbarConfig): DynamicModule {
-		logger = new RollbarLogger(config);
+	static forRoot(options: RollbarOptions): DynamicModule {
+		logger = new RollbarLogger(options);
 		const loggerServiceProvider: Provider = {
 			provide: RollbarLogger,
 			useFactory: () => logger,

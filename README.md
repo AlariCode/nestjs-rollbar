@@ -32,8 +32,48 @@ import { LoggerModule } from 'nestjs-rollbar';
 export class AppModule {}
 ```
 
--   accessToken - your project token
--   environment - an environment that will be logged in Rollbar.
+`forRoot` method uses RollBar NodeJS configuration interface 
+
+``` javascript
+export interface Configuration {
+        accessToken?: string;
+        version?: string;
+        environment?: string;
+        codeVersion?: string;
+        code_version?: string;
+        scrubFields?: string[];
+        overwriteScrubFields?: boolean;
+        scrubHeaders?: string[];
+        logLevel?: Level;
+        reportLevel?: Level;
+        uncaughtErrorLevel?: Level;
+        endpoint?: string;
+        verbose?: boolean;
+        enabled?: boolean;
+        captureUncaught?: boolean;
+        captureUnhandledRejections?: boolean;
+        payload?: object;
+        maxItems?: number;
+        itemsPerMinute?: number;
+        ignoredMessages?: string[];
+        hostWhiteList?: string[];
+        hostBlackList?: string[];
+        filterTelemetry?: (e: TelemetryEvent) => boolean;
+        autoInstrument?: AutoInstrumentOptions;
+        maxTelemetryEvents?: number;
+        telemetryScrubber?: TelemetryScrubber;
+        includeItemsInTelemetry?: boolean;
+        scrubTelemetryInputs?: boolean;
+        sendConfig?: boolean;
+        captureEmail?: boolean;
+        captureUsername?: boolean;
+        captureIp?: boolean | "anonymize";
+        captureLambdaTimeouts?: boolean;
+        transform?: (data: object) => void;
+        checkIgnore?: (isUncaught: boolean, args: LogArgument[], item: object) => boolean;
+        onSendCallback?: (isUncaught: boolean, args: LogArgument[], item: object) => void;
+    }
+```
 
 To use RollbarLogger in any service or controller just inject it in constructor:
 

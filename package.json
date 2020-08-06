@@ -1,12 +1,11 @@
 {
 	"name": "nestjs-rollbar",
-	"version": "1.3.0",
+	"version": "1.4.0",
 	"description": "Rollbar Module for NestJS",
 	"main": "./dist/index.js",
 	"types": "./dist/index.d.ts",
 	"scripts": {
-		"prepublish": "tsc -p tsconfig.json",
-		"test": "mocha --require ts-node/register tests/**/*.ts"
+		"prepare": "tsc -p tsconfig.json"
 	},
 	"author": "Anton Larichev <antonlarichev@gmail.com>",
 	"keywords": [

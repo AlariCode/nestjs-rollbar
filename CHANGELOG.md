@@ -1,5 +1,9 @@
 # ChangeLog
 
+## 1.4.0
+
+-   Added full rollbar api config support (thx @rhutchison)
+
 ## 1.3.0
 
 -   Added rethrow option to RollbarHandler

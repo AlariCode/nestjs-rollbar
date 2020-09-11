@@ -1,6 +1,6 @@
 {
 	"name": "nestjs-rollbar",
-	"version": "1.4.0",
+	"version": "1.4.1",
 	"description": "Rollbar Module for NestJS",
 	"main": "./dist/index.js",
 	"types": "./dist/index.d.ts",
@@ -24,7 +24,7 @@
 	},
 	"homepage": "https://github.com/AlariCode/nestjs-rollbar",
 	"dependencies": {
-		"rollbar": "^2.9.0"
+		"rollbar": "^2.19.3"
 	},
 	"devDependencies": {
 		"ts-node": "^7.0.1",

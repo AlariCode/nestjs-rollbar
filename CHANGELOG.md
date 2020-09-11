@@ -1,5 +1,9 @@
 # ChangeLog
 
+## 1.4.1
+
+-   Up rollabar version and export
+
 ## 1.4.0
 
 -   Added full rollbar api config support (thx @rhutchison)

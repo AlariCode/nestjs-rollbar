@@ -24,7 +24,7 @@
 	},
 	"homepage": "https://github.com/AlariCode/nestjs-rollbar",
 	"dependencies": {
-		"rollbar": "^2.19.3"
+		"rollbar": "^2.22.0"
 	},
 	"devDependencies": {
 		"ts-node": "^7.0.1",

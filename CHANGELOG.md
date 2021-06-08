@@ -1,5 +1,9 @@
 # ChangeLog
 
+## 1.5.0
+
+- Fix imlementing LoggerService (thx @btd1337)
+
 ## 1.4.1
 
 -   Up rollabar version and export

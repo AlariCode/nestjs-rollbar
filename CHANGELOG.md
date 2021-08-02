@@ -1,5 +1,9 @@
 # ChangeLog
 
+## 1.6.0
+
+- Added forRootAsync method for async initialization
+
 ## 1.5.0
 
 - Fix imlementing LoggerService (thx @btd1337)

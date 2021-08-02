@@ -1,10 +1,12 @@
 import { Test } from '@nestjs/testing';
 import { INestApplication } from '@nestjs/common';
 import { LoggerModule } from '../../lib/logger.module';
-import { ApiController } from '../mocks/api.controller';
 import { RollbarLogger } from '../../lib';
+import { ApiController } from '../mocks/api.controller';
+import { ConfigModule } from '../mocks/config.module';
+import { ConfigService } from '../mocks/config.service';
 
-describe('RollbarE2e', () => {
+describe('RollbarAsyncE2e', () => {
 	let api: INestApplication;
 	let apiController: ApiController;
 	let logger: RollbarLogger;
@@ -12,9 +14,15 @@ describe('RollbarE2e', () => {
 	beforeAll(async () => {
 		const apiModule = await Test.createTestingModule({
 			imports: [
-				LoggerModule.forRoot({
-					accessToken: '',
-					environment: 'develop'
+				LoggerModule.forRootAsync({
+					imports: [ConfigModule],
+					inject: [ConfigService],
+					useFactory: (configService: ConfigService) => {
+						return {
+							accessToken: configService.getToken(),
+							environment: 'develop'
+						};
+					},
 				}),
 			],
 			controllers: [ApiController],
@@ -35,6 +43,10 @@ describe('RollbarE2e', () => {
 	})
 
 	describe('calls', () => {
+		it('check token', async () => {
+			expect(logger.options.accessToken).toEqual('1');
+		});
+
 		it('check decorator is called', async () => {
 			await apiController.decoratorMethod();
 			expect(logger.error).toBeCalledTimes(1);

@@ -1,5 +1,9 @@
 # ChangeLog
 
+## 1.7.0
+- Migration to NestJS 8
+- Update dependencies
+
 ## 1.6.0
 
 - Added forRootAsync method for async initialization

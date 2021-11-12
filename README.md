@@ -25,7 +25,7 @@ import { LoggerModule } from 'nestjs-rollbar';
 		// ...
 		LoggerModule.forRoot({
 			accessToken: configService.get('ROLLBAR_TOKEN'),
-			environment: configService.get('ENVIROMENT'),
+			environment: configService.get('ENVIRONMENT'),
 		}),
 	],
 })
@@ -33,6 +33,27 @@ export class AppModule {}
 ```
 
 `forRoot` method uses RollBar NodeJS configuration interface 
+
+Or, using `forRootAsync`:
+```
+import { ConfigModule, ConfigService } from '@nestjs/config';
+import { LoggerModule } from 'nestjs-rollbar';
+
+@Module({
+	imports: [
+		// ...
+	        LoggerModule.forRootAsync({
+	            imports: [ConfigModule],
+	            inject: [ConfigService],
+	            useFactory: (configService: ConfigService) => ({
+	                accessToken: configService.get('ROLLBAR_TOKEN'),
+	                environment: configService.get('ENVIRONMENT'),
+	            }),
+	        }),
+	],
+})
+export class AppModule {}
+```
 
 ``` javascript
 export interface Configuration {
